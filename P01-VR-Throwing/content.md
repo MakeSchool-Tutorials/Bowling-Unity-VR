@@ -8,7 +8,7 @@ slug: vr-throwing
 
 We will get back to this in a moment.
 
-Now we are going to need to import SteamVR into the project so that we can get the hand controllers and control our HMD virtual reality display.
+Now we are going to need to import SteamVR into the project so that we can get the hand controllers and control our HMD.
 
 >[action]
 >Open the Asset Store then search for SteamVR and Download and import it.
