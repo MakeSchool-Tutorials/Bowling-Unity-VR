@@ -12,17 +12,17 @@ Now we are going to need to import SteamVR into the project so that we can get t
 
 >[action]
 >Open the Asset Store then search for SteamVR and Download and import it.
-![Download SteamVR](assets/image09.png "Download SteamVR")
+![Download SteamVR](assets/image09.png)
 
 <!-- -->
 
 >[action]
 >Once it is done downloading, please import it into your project, and then find the SteamVR folder under Assets.  Drag a [SteamVR] component and a [CameraRig] component to the scene.
-![Download SteamVR](assets/image10.png "Download SteamVR")
+![Camera Rig in scene](assets/image10.png)
 
 The glowing blue box will be your walking play area.  You will be able to walk around this region and interact with objects inside of it.  For now we will only have the ball in our region of view.  We will also want to make the lane slightly shorter, so adjust it’s X scale to 8 instead of 15, this will put us closer to the pins.  
 
-#Throwing
+#Throwing the Ball
 
 Now we can make the ball grab-able and add physics to it.
 
@@ -33,7 +33,7 @@ If we go into the [CameraRig] object in the Scene, you will see that it has an O
 
 >[action]
 >Update the Model Override to point to the controller_vive so that people can see themselves holding a vive controller in the world.  Then add a box collider to this Model so that we can use it to collide with our ball.  Make sure that Is Trigger is checked on the box collider. Is Trigger will ensure that when our hand collides with the ball it wont knock the ball around, it will only fire off a Trigger Enter so that we can decide what to do.
-![Hand Collider](assets/image11.png "Hand Collider")
+![Hand Collider](assets/image11.png)
 
 Now we will add a new script called Grab Ball.  The contents of the script are below, we will go through what each part of the script does together.  This script will allow you to grab the ball and throw it.
 
@@ -94,7 +94,7 @@ public class GrabBall : MonoBehaviour {
 
 >[action]
 >Now you can drag the Controller to the script like this:
-![Equip Script](assets/image12.png "Equip Script")
+![Equip Script](assets/image12.png)
 This will allow us to access the controller in the script.
 
 <!-- -->
@@ -102,7 +102,7 @@ This will allow us to access the controller in the script.
 >[action]
 Now let’s make the ball much higher mass than the pins so that it will knock them around.
 Click the Ball GameObject and increase its mass to 5.
-![Increase Mass](assets/image13.png "Increase Mass")
+![Increase Mass](assets/image13.png)
 
 Now if we go into the game we should be able to walk up to the ball, grab it with our hands and throw it at the pins!
 
