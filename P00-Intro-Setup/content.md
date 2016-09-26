@@ -41,7 +41,7 @@ This bowling pin is too big.  In order to understand the scale it should be let�
 >[action]
 >Delete the pin if you dragged on in, then create a cube and stretch it to be long and skinny, like a bowling lane. We used a scale of (15,0.1,3).
 
-![Create Lane](assets/image03.png "Create Lane")
+![Create Lane](assets/Capture1.png)
 
 This will create a nice surface to bowl on.
 
@@ -50,20 +50,20 @@ This will create a nice surface to bowl on.
 >[action]
 >Now let’s make a material for this bowling lane, we can just use the standard unity shader, set the Albedo color to a brown or gold and drag the material to the cube to assign it.
 
-![Lane Material](assets/image04.png)
+![Lane Material](assets/Capture2.png)
 
 Now if you drag the bowling pin out again you will notice it is gigantic.  You will want to shrink it down by setting it’s scale to something more manageable.
 
 >[action]
->Set it’s scale to 0.025 for all 3 axes.
+>Set it’s scale to 0.025 for all 3 axes, create an Empty Game Object called Pin, and drag this model inside. We do this rather than just scaling down our pin so that we can think of our Pin Prefab as being scaled (1,1,1), which is likely to be convenient later.
 
-![Scale Pin](assets/image05.png)
+![Scale Pin](assets/Capture4.png)
 
 <!-- -->
 
 >[action]Now place this pin at the back of the lane and make a new Prefab for this pin. As a refresher on how to make the Pin a new Prefab, give the pin a name in the Hierarchy panel and drag it into your Project panel.
 
-![Pin Prefab](assets/image06.png)
+![Pin Prefab](assets/Capture6.png)
 
 Making a prefab will record the size of the model and make it easier to make changes to entire groups of pins at one time.  We are going to make a number of changes, and it will be good to do this to the prefab instead of to a single pin at a time.
 
@@ -71,12 +71,16 @@ Now let’s make the pin respond to physics and collide with things.
 
 >[action]Add a RigidBody component, and a Box Collider to the pin.  You will want to resize the box collider so that it is the same size as the pin.
 
-![Pin Physics](assets/image07.png)
+![Pin Physics](assets/Capture7.png)
 
 <!-- -->
 
 >[info]
 >We could have used 3 convex Mesh Colliders (one for each mesh) if we had wanted more accurate collisions, but Mesh Colliders are expensive, and a Box Collider is good enough for what we want to be able to do.
 
+<!-- -->
+
+>[action]
 Now duplicate the pin over and over the make the expected pin layout.
-![Bowling Setup](assets/image08.png)
+
+![Bowling Setup](assets/Capture8.png)
