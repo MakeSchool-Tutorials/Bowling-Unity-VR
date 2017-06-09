@@ -92,17 +92,16 @@ public class GrabBall : MonoBehaviour
         //If you press the trigger down while an object is selected and not grabbed,
         //Mark the object as grabbed and move it to the hand.
         if ((selectedObject != null && grabbedObject == null) && device.GetHairTriggerDown())
-        {
->            
+        {    
             grabbedObject = selectedObject;
             grabbedObject.transform.position = this.gameObject.transform.position;
-            selectedObject.GetComponent<Rigidbody>().useGravity = false;
+            selectedObject.GetComponent<Rigidbody>().isKinematic = true;
         }
         else if (grabbedObject != null && device.GetHairTriggerUp())
         {
             //If we let go of the trigger while an object is grabbed then apply physics
             var rigidbody = grabbedObject.GetComponent<Rigidbody>();
-            rigidbody.useGravity = true;
+            rigidbody.isKinematic = false;
             //Apply the current device velocity to the object to throw it, we multiply 5 to make it
             //Easier to throw.
             rigidbody.velocity = grabbedObject.transform.TransformVector(device.velocity * 5);
