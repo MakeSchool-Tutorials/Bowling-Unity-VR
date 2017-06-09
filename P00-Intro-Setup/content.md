@@ -14,14 +14,12 @@ We're going to get some free models from the Sketchup 3D Warehouse. You can use 
 > [action]
 >
 Go to the [Sketchup 3D Warehouse](https://3dwarehouse.sketchup.com/model.html?id=9ad3782c82b1e1ba70d6f696167a3190) to get a free bowling pin model.
+>
+Unity supports Collada files, so click the red Download button and save the Collada file to your computer. Then extract the zip file somewhere so you can find model.
 
 This link has a bowling pin with 80 polygons. Always mind a higher number of polygons means more complex, which is more expensive to render.
 
 ![Bowling Pin Download](assets/pin_sketchup.png)
-
-> [action]
->
-Unity supports Collada files, so click the red Download button and save the Collada file to your computer. Then extract the zip file somewhere so you can find model.
 
 # Create a project
 
@@ -51,7 +49,7 @@ This will give you a nice surface to bowl on.
 
 > [action]
 >
-Now let’s make a material for this bowling lane, we can use the standard unity shader, set the Albedo color to a brown or gold and drag the material to the cube to assign it.
+Now let’s create a new material for this bowling lane. Use the standard unity shader, set the Albedo color to a brown or gold and drag the material to the cube to assign it.
 >
 ![Lane Material](assets/Capture2.png)
 
@@ -79,7 +77,9 @@ Now, let’s make the pin respond to physics and collide with other objects.
 
 > [action]
 >
-Add a Rigidbody component, and a Box Collider to the pin. You will want to resize the box collider so that it's the same size as the pin.
+Add a Rigidbody component, and a Box Collider to the pin. You will want to resize the box collider so that it's the same size as the pin. It may make your life easier to move the model inside of pin so it's actually centered in the parent object. We found `(0.1, 0, 0.05)` worked well for us.
+>
+Make sure to hit `Apply` when you're done to update the prefab!
 >
 ![Pin Physics](assets/Capture7.png)
 
@@ -93,6 +93,6 @@ We could have used 3 convex Mesh Colliders (one for each mesh) if we had wanted 
 
 > [action]
 >
-Now duplicate the pin over and over the make the expected pin layout.
+Now duplicate the pin over and over the make the expected pin layout at the end of the lane.
 >
 ![Bowling Setup](assets/Capture8.png)
